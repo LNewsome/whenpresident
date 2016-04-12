@@ -45,10 +45,17 @@ app.get("/candidates/:name", function(req, res){
     });
   });
 });
+app.post("/candidates/:name/delete", function(req, res){
+  Candidate.findOneAndRemove({name: req.params.name}).then(function(){
+    res.redirect("/canidates")
+  });
+});
+
 app.post("/candidates/:name", function(req, res){
   Candidate.findOneAndUpdate({name: req.params.name}, req.body.candidate, res.redirect("/candidate/"+candidate.name);
   });
 });
+
 app.listen(app.get("port"), function(){
   console.log("It's aliiive!");
 });
