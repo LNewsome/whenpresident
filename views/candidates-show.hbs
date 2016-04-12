@@ -3,3 +3,14 @@
 {{else}}
 <h2>That candidate couldn't be found!</h2>
 {{/if}}
+
+
+<form method="post" acion="/candidates/{{candidate.name}}//delete">
+  <button type="submit">Concede</button>
+</form>
+
+<form action ="/candidate" method="post">
+  <input type="text" name= "candidate[name]" placeholder="Name"/>
+  <input type="number" name="candidate[year]" placeholder="Year"/>
+  <button type= "submit">Run for Office</button>
+</form>
